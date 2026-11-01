@@ -1,0 +1,15 @@
+# competition data and trained weights are not included
+*.csv
+!analysis/*.csv
+*.zip
+*.npz
+*.safetensors
+*.bin
+*.pt
+ranker_*.txt
+eng_*.txt
+model/emb/
+model/ce/
+catalog_ko*.csv
+__pycache__/
+.ipynb_checkpoints/
