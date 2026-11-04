@@ -23,6 +23,8 @@
 
 검색 → 특징 계산 → 순위 학습 → 재채점 → 규칙 기반 후처리로 이어지는 파이프라인이에요.
 
+<p align="center"><img src="assets/pipeline.png" width="760" alt="최종 모델 파이프라인"></p>
+
 ```mermaid
 flowchart LR
     A[기록 1행] --> B[A. 정규화<br/>발음·자모·한자음 키]
