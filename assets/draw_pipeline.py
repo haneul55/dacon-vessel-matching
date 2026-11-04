@@ -44,7 +44,7 @@ with plt.xkcd(scale=0.8, length=120, randomness=1.5):
         box(56.5, y - 0.9, 25, 1.8, fc="#dde7f6" if hl else "white", lw=1.2, ec=BLUE if hl else GRAY)
     txt(69, 72, "Catalog  (78,595 vessels)", size=20)
     txt(69, 68.3, "name + tonnage ±5.5%  →  ~74 candidates", size=13, c=BLUE)
-    txt(69, 65.3, "+ 10 nearest by LaBSE meaning", size=13, c=BLUE)
+    txt(69, 65.3, "+ up to 50 nearest by LaBSE (±10% GT)", size=13, c=BLUE)
 
     # one candidate -> feature bar
     arrow((55, 76.3), (7.0, 49.5), c=GRAY, rad=0.0, lw=2.0)

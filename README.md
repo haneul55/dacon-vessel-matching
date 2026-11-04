@@ -29,7 +29,7 @@
 flowchart LR
     A[기록 1행] --> B[A. 정규화<br/>발음·자모·한자음 키]
     B --> C[B. 후보 검색<br/>문자열 유사도 + 톤수 ±5.5%<br/>약 74척]
-    B --> D[C. 의미 검색<br/>LaBSE 임베딩<br/>+10척]
+    B --> D[C. 의미 검색<br/>LaBSE 임베딩<br/>최대 +50척]
     C --> E[D. 특징 68개<br/>철자·발음·톤수·국적·임베딩]
     D --> E
     E --> F[E. LightGBM LambdaRank<br/>시드 3개 평균<br/>한글/영문 모델 분리]
@@ -37,6 +37,12 @@ flowchart LR
     G --> H[호출부호 후처리]
     H --> I[제출]
 ```
+
+### 모델 구조
+
+위쪽은 단계 구성이고, 아래쪽은 기록 한 줄이 각 단계를 지나며 바뀌는 모습이에요. 단계별 자세한 설명은 [docs/model_structure.md](docs/model_structure.md)에 있어요.
+
+<p align="center"><img src="assets/architecture.png" width="900" alt="모델 구조"></p>
 
 ### 1. 한글 → 영문 표기 맞추기 (`inference/model/vessel_lib.py`, `hanja.py`)
 - 한글 이름을 로마자 발음 키와 자모 키로 바꿔서 영문 이름과 비교해요.
