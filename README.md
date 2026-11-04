@@ -40,7 +40,7 @@ flowchart LR
 
 ### 모델 구조
 
-위쪽은 단계 구성이고, 아래쪽은 기록 한 줄이 각 단계를 지나며 바뀌는 모습이에요. 단계별 자세한 설명은 [docs/model_structure.md](docs/model_structure.md)에 있어요.
+위쪽은 단계 구성이고, 아래쪽은 기록 한 줄이 각 단계를 지나며 바뀌는 모습이에요. 단계별 자세한 설명은 [docs/model_structure.md](docs/model_structure.md), 공부 순서는 [docs/study_plan.md](docs/study_plan.md)에 있어요.
 
 <p align="center"><img src="assets/architecture.png" width="900" alt="모델 구조"></p>
 
