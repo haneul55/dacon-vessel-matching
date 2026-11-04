@@ -70,7 +70,7 @@ arrow((20, 84), (20, YT + HT))
 # output of top row
 ox = xs[-1] + W
 arrow((ox, YT + HT / 2), (ox + 5, YT + HT / 2))
-text(ox + 6, YT + HT / 2 + 1.6, "VESSEL_26017", size=10.5, ha="left", weight="bold")
+text(ox + 6, YT + HT / 2 + 1.6, "정답 선박 ID", size=10.5, ha="left", weight="bold")
 text(ox + 6, YT + HT / 2 - 1.6, "Jin Cheng 8", size=10.5, ha="left", c=BLUE)
 
 # ---------------- bottom row: one record through each stage ----------------

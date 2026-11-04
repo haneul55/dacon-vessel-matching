@@ -99,7 +99,7 @@ with plt.xkcd(scale=0.8, length=120, randomness=1.5):
 
     arrow((81, yc + 1), (86, yc + 1), lw=2.4)
     txt(93, yc + 3.0, "Jin Cheng 8", size=17, c=BLUE, weight="bold")
-    txt(93, yc - 1.2, "VESSEL_26017", size=11, c=GRAY)
+    txt(93, yc - 1.2, "(illustrative example)", size=11, c=GRAY)
     txt(93, yc - 6.5, "LB 0.95240", size=15, c=RED)
 
     # LaBSE training note
