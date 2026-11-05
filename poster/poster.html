@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>더블kim DS-DAY 포스터</title>
+<style>
+  @page { size: 841mm 1189mm; margin: 0; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { width: 841mm; height: 1189mm; font-family: "Malgun Gothic", sans-serif; color: #1d1d1f;
+         background: #ffffff; font-size: 25pt; line-height: 1.5; }
+  .head { background: #1f3a68; color: #fff; height: 175mm; padding: 22mm 34mm 0; }
+  .head h1 { margin: 0; font-size: 70pt; line-height: 1.25; letter-spacing: -1pt; }
+  .head .en { font-family: "Times New Roman", serif; font-style: italic; font-size: 34pt; margin-top: 7mm; color: #dfe7f5; }
+  .head .who { margin-top: 10mm; font-size: 28pt; }
+  .head .who b { font-weight: 700; }
+  .head .aff { font-size: 22pt; color: #c9d5ea; margin-top: 2mm; }
+  .tag { display: inline-block; background: #ffffff; color: #1f3a68; font-weight: 700; font-size: 21pt;
+         padding: 1.5mm 6mm; border-radius: 2mm; margin-right: 5mm; vertical-align: middle; }
+  .cols { display: flex; gap: 14mm; padding: 13mm 22mm 0; height: 960mm; }
+  .col { flex: 1; display: flex; flex-direction: column; gap: 9mm; min-width: 0; }
+  .sec { border: 1.2mm solid #1f3a68; border-radius: 3mm; overflow: hidden; }
+  .sec > h2 { margin: 0; background: #1f3a68; color: #fff; font-size: 34pt; text-align: center; padding: 3mm 0; }
+  .sec > .body { padding: 6mm 9mm 7mm; }
+  .sec { flex-shrink: 0; }
+  .grow { flex: 1 0 auto; }
+  h3 { margin: 4mm 0 2mm; font-size: 27pt; color: #1f3a68; }
+  h3:first-child { margin-top: 0; }
+  p { margin: 0 0 3mm; }
+  ul, ol { margin: 0 0 3mm; padding-left: 9mm; }
+  li { margin-bottom: 1.2mm; }
+  table { width: 100%; border-collapse: collapse; font-size: 21pt; margin: 2mm 0 3mm; }
+  th { background: #e8edf6; color: #1f3a68; font-weight: 700; }
+  th, td { border: 0.5mm solid #b8c3d8; padding: 1.6mm 3mm; text-align: center; }
+  td.l, th.l { text-align: left; }
+  img { width: 100%; display: block; margin: 2mm 0; }
+  img.chart { width: 76%; margin: 1mm auto; }
+  .cap { font-size: 18pt; color: #555; text-align: center; margin: 0 0 3mm; }
+  .box { background: #f2f5fa; border-left: 2mm solid #2f75b5; padding: 3mm 6mm; margin: 3mm 0; }
+  code, pre { font-family: Consolas, "Malgun Gothic", monospace; }
+  pre { background: #f5f5f5; border: 0.5mm solid #ddd; font-size: 17pt; line-height: 1.35; padding: 3mm 5mm; margin: 2mm 0 3mm; white-space: pre; overflow: hidden; }
+  .three { display: flex; gap: 5mm; }
+  .three > div { flex: 1; background: #f2f5fa; border-radius: 2mm; padding: 4mm 5mm; font-size: 21pt; line-height: 1.45; }
+  .three b { color: #1f3a68; display: block; font-size: 23pt; margin-bottom: 1.5mm; }
+  .big { font-size: 44pt; font-weight: 700; color: #1f3a68; }
+  .ref { font-size: 17pt; line-height: 1.4; }
+  .ref li { margin-bottom: 0.8mm; }
+  .foot { height: 54mm; padding: 6mm 34mm 0; font-size: 20pt; color: #444; display: flex; justify-content: space-between; align-items: center; }
+</style>
+</head>
+<body>
+
+<div class="head">
+  <h1>다양한 한글 표기의 항만 입출항 기록을 위한<br>검색 · 순위 학습 기반 선박 매칭 모델</h1>
+  <div class="en">A Retrieval and Learning-to-Rank Model for Matching Multi-Script Port Call Records to a Vessel Catalog</div>
+  <div class="who"><span class="tag">더블kim</span><b>김주호, 김하늘</b> &nbsp;·&nbsp; 지도교수 <b>정진명</b></div>
+  <div class="aff">수원대학교 데이터과학부 &nbsp;|&nbsp; 2026 DS-DAY &nbsp;|&nbsp; DACON 경진대회 참가 과제</div>
+</div>
+
+<div class="cols">
+  <!-- left column -->
+  <div class="col">
+    <div class="sec">
+      <h2>연구 배경 및 목표</h2>
+      <div class="body">
+        <p>항만에 들어오는 배의 입출항 기록에는 선박명, 호출부호, 톤수, 국적이 적혀 있습니다. 이 기록이 선박 명부의 어떤 배인지 정확히 이어 주어야 입출항 이력을 배 단위로 관리할 수 있습니다.</p>
+        <p>문제는 명부에는 영문 이름만 있는데, 기록의 선박명은 한글로 적힌 경우가 많고 그 표기 방식도 제각각이라는 점입니다.</p>
+        <table>
+          <tr><th class="l">기록의 선박명</th><th class="l">명부의 선박명</th><th class="l">표기 방식</th></tr>
+          <tr><td class="l">케이엠티씨 선전</td><td class="l">KMTC Shenzhen</td><td class="l">약어와 지명을 소리대로</td></tr>
+          <tr><td class="l">금성 (예시)</td><td class="l">Jin Cheng</td><td class="l">중국 선박명을 한자음으로</td></tr>
+          <tr><td class="l">해풍 (예시)</td><td class="l">Sea Wind</td><td class="l">뜻을 번역해서</td></tr>
+          <tr><td class="l">GRAND VICCTORY</td><td class="l">GRAND VICTORY</td><td class="l">영문 오타</td></tr>
+        </table>
+        <p>본 연구의 목표는 이처럼 표기가 다양한 기록 한 줄을 보고, <b>78,595척의 명부에서 같은 배를 찾는 모델</b>을 만드는 것입니다.</p>
+      </div>
+    </div>
+
+    <div class="sec">
+      <h2>데이터</h2>
+      <div class="body">
+        <table>
+          <tr><th>데이터</th><th>규모</th><th class="l">내용</th></tr>
+          <tr><td>train</td><td>12,222행</td><td class="l">한글 기록 1,191행(9.7%), 고유 선박 5,851척</td></tr>
+          <tr><td>catalog</td><td>78,595척</td><td class="l">영문 선박명, 톤수, 국적, 선종</td></tr>
+          <tr><td>test</td><td>4,100행</td><td class="l">한글 532행, 영문 3,568행 (점수에서 역산)</td></tr>
+        </table>
+        <ul>
+          <li>train 기록의 6.5%는 톤수가, 16.5%는 국적이 비어 있습니다.</li>
+          <li>train에서 호출부호와 선박은 정확히 1:1로 대응합니다 (5,851개 ↔ 5,851척).</li>
+          <li>평가식: <b>0.7 × 한글 기록 정확도 + 0.3 × 영문 기록 정확도</b></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sec grow">
+      <h2>모델 구조</h2>
+      <div class="body">
+        <p>명부 전체를 정밀하게 비교하는 대신, 가벼운 방법으로 후보를 먼저 추리고 학습한 모델이 후보의 순위를 매기는 <b>검색 → 재순위(retrieve → rerank)</b> 구조로 설계했습니다.</p>
+        <img src="../assets/architecture.png" alt="모델 구조">
+        <p class="cap">그림 1. 단계 구성(위)과 기록 한 줄이 각 단계에서 바뀌는 모습(아래, 가상 예시)</p>
+        <ol>
+          <li><b>정규화</b>: 한글 선박명으로 발음 키, 자모 키, 한자음 키를 만듭니다.</li>
+          <li><b>후보 검색</b>: 이름 유사도, 톤수 ±5.5%, 한자음 사전, LaBSE 의미 검색 결과를 합쳐 평균 100척 안팎으로 줄입니다.</li>
+          <li><b>특징 계산</b>: 후보마다 철자·발음·한자음·숫자·톤수·국적·임베딩 유사도 등 68개 특징을 계산합니다.</li>
+          <li><b>순위 결정</b>: LightGBM LambdaRank가 후보 점수를 매기고, 한글 기록은 cross-encoder로 상위 5척을 다시 채점합니다.</li>
+          <li><b>호출부호 후처리</b>: train의 호출부호 1:1 관계로 답을 한 번 더 점검합니다.</li>
+        </ol>
+        <h3>데이터 증강</h3>
+        <p>한글 기록이 1,191행뿐이라 자모 오타·띄어쓰기·톤수 결측을 일부러 만들고, Qwen2.5-7B로 train 선박명을 다섯 가지 방식(소리, 한자음, 뜻, 혼합, 줄임)의 한글로 다시 써서 학습에 추가했습니다.</p>
+        <h3>검증 방식</h3>
+        <p>같은 배가 학습과 검증에 함께 들어가지 않도록 <b>선박 단위 GroupKFold(5)</b>로 검증했습니다. 신경망과 보조 사전도 fold마다 따로 만들어 정보가 새지 않게 했습니다.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- right column -->
+  <div class="col">
+    <div class="sec">
+      <h2>핵심 기법</h2>
+      <div class="body">
+        <div class="three">
+          <div><b>순위 학습</b>기록 하나의 후보 전체를 한 묶음으로 보고 정답이 1위에 오도록 학습했습니다. 평가식에 맞춰 한글 0.7, 영문 0.3의 가중치를 주고, "닮을수록 점수가 높다"는 단조 제약을 걸었습니다.</div>
+          <div><b>두 종류의 신경망</b>LaBSE(bi-encoder)는 빠르게 명부 전체에서 뜻이 가까운 배를 찾고, cross-encoder는 두 이름을 함께 읽어 상위 5척만 정밀하게 다시 채점합니다.</div>
+          <div><b>호출부호 후처리</b>train에 없는 호출부호는 train의 배가 될 수 없다는 규칙 등을 적용했습니다. 규칙마다 영문 기록으로 먼저 검증하고, 어긋나면 스스로 꺼지게 했습니다.</div>
+        </div>
+<pre># 랭커 점수에 한글 기록만 cross-encoder 점수를 더함 (vessel_lib.py)
+sc = self.booster.predict(X)
+if CE is not None and q.hangul and len(cands) &gt; 1:
+    top = np.argsort(-sc, kind="stable")[:CE_TOP]        # 상위 5척
+    sc[top] += CE_W * CE.score(row.get("vessel_name"), self.idx.names[cands[top]])</pre>
+      </div>
+    </div>
+
+    <div class="sec grow">
+      <h2>실험 및 결과</h2>
+      <div class="body">
+        <p>최종 Public LB <span class="big">0.95240</span> &nbsp;(한글 504/532, 영문 3,440/3,568)</p>
+        <img class="chart" src="lb_steps.png" alt="단계별 LB">
+        <p class="cap">그림 2. 구성 요소를 더할 때마다의 Public LB. 정답 수는 평가식으로 역산했습니다.</p>
+        <ul>
+          <li>영문 랭커를 9개 앙상블로 늘리면서 영문 정답이 4개 늘었습니다.</li>
+          <li>호출부호 배제·묶기 규칙으로 영문 정답이 7개 늘었고, 두 가지를 함께 적용한 것이 최종 모델입니다.</li>
+        </ul>
+        <h3>스트레스 테스트</h3>
+        <p>로컬 검증은 0.99를 넘었지만 LB는 그보다 낮았습니다. 원인을 찾기 위해 검증 기록에 손상을 일부러 넣고 다시 채점했습니다(개발 중 버전 기준).</p>
+        <img class="chart" src="stress.png" alt="스트레스 테스트">
+        <p class="cap">그림 3. 손상 조건별 정확도. 정보가 여러 개 동시에 손상되면 한글 정확도가 크게 떨어집니다.</p>
+      </div>
+    </div>
+
+    <div class="sec">
+      <h2>결론 및 향후 연구</h2>
+      <div class="body">
+        <ul>
+          <li>표기가 제각각인 한글 기록을 발음·한자음·의미 등 여러 경로로 검색하고, 순위 학습으로 고르는 구조가 효과적이었습니다.</li>
+          <li>데이터의 구조적 성질(호출부호 1:1)을 자기 검증 게이트와 함께 쓰면 모델 성능을 안전하게 보완할 수 있었습니다.</li>
+          <li>한계: 한글 오답 28건 중 약 16건은 정답이 상위 5척 후보에도 없었습니다. 표기가 지나치게 자유로우면 검색 단계에서부터 놓칩니다.</li>
+          <li>향후: LLM으로 검색 키를 더 다양하게 생성하고, 더 큰 cross-encoder로 재채점 범위를 넓힐 계획입니다.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sec">
+      <h2>참고문헌</h2>
+      <div class="body">
+        <ol class="ref">
+          <li>C. J. C. Burges, "From RankNet to LambdaRank to LambdaMART: An Overview," Microsoft Research Tech. Report MSR-TR-2010-82, 2010.</li>
+          <li>G. Ke et al., "LightGBM: A Highly Efficient Gradient Boosting Decision Tree," NeurIPS, 2017.</li>
+          <li>F. Feng et al., "Language-agnostic BERT Sentence Embedding," ACL, 2022.</li>
+          <li>R. Nogueira and K. Cho, "Passage Re-ranking with BERT," arXiv:1901.04085, 2019.</li>
+          <li>Qwen Team, "Qwen2.5 Technical Report," arXiv:2412.15115, 2024.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="foot">
+  <span>코드: github.com/haneul55/dacon-vessel-matching</span>
+  <span>사용 기술: Python · LightGBM · rapidfuzz · PyTorch · Hugging Face Transformers · Kaggle GPU</span>
+</div>
+
+</body>
+</html>
