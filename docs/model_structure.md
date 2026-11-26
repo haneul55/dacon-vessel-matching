@@ -2,7 +2,7 @@
 
 최종 제출(Public LB 0.95240)이 기록 한 줄을 어떻게 처리하는지 단계별로 정리한 노트입니다. 면접에서 모델 설명을 요청받았을 때 각 단계가 무엇을 하는지, 왜 필요한지, 어느 코드에 있는지 바로 답할 수 있도록 하는 것이 목적입니다.
 
-<p align="center"><img src="../assets/model_inference_detail.png" width="900" alt="추론 과정 상세"></p>
+<p align="center"><img src="../assets/architecture.png" width="900" alt="모델 구조"></p>
 
 ## 한 줄로 요약하면
 

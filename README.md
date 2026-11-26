@@ -127,33 +127,6 @@ if CE is not None and q.hangul and len(cands) > 1:
 
 <br>
 
-## 모델 구조 자세히 보기
-
-포스터의 모델 개요는 흐름만 보여 줘서, 실제 코드가 기록 한 행을 어떻게 처리하는지와 각 모델을 어떻게 학습했는지를 따로 그렸습니다. 그림 속 숫자는 모두 코드에 들어 있는 실제 설정값입니다.
-
-### 추론: 신고서 한 행이 vessel_id가 되기까지
-
-<p align="center"><img src="assets/model_inference_detail.png" width="980" alt="추론 과정 상세"></p>
-
-`금성 89호`를 따라가 보면:
-
-- **A** 이름 하나로 발음·자모·한자 읽기·마루·뜻 키를 만들고 (노란색은 직접 만든 사전)
-- **B** 키마다 찾은 후보를 깔때기에 모아 78,595척을 약 77척으로 줄이고
-- **C** 후보마다 68개 피처를 계산해 77 × 68 표를 만든 뒤
-- **D** 한글 행은 랭커 3개 + 상위 5척 cross-encoder 재채점, 영문 행은 랭커 9개로 점수를 매기고
-- **E** 호출부호 규칙으로 한 번 더 확인해 Jin Cheng 89를 고릅니다.
-
-### 학습: 각 구성 요소를 어떻게 만들었나
-
-<p align="center"><img src="assets/model_training_detail.png" width="980" alt="학습 과정 상세"></p>
-
-- 같은 배의 기록은 같은 fold에 넣어, 검증 fold에는 학습 때 못 본 배만 나오게 했습니다.
-- LaBSE·LambdaRank·cross-encoder는 fold마다 학습 fold로만 만들고, 최종 제출 모델은 전체 train으로 다시 학습했습니다.
-
-단계별 코드 위치와 예상 질의응답은 [docs/model_structure.md](docs/model_structure.md)에 정리했습니다.
-
-<br>
-
 ## 결과
 
 <p align="center"><img src="poster/fig_score.png" width="820" alt="구성 요소를 더할 때의 성능 변화"></p>
