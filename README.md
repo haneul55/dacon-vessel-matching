@@ -24,7 +24,7 @@ DACON [항만 문제해결을 위한 AI 기술 공모전](https://dacon.io/compe
 
 카탈로그에는 영어 이름만 있는데, 신고서의 한글 선박명은 네 가지 방식으로 적혀 있었습니다.
 
-<p align="center"><img src="poster/fig_examples.png" width="520" alt="한글 선박명의 네 가지 표기 방식"></p>
+<p align="center"><img src="assets/naming_types.png" width="620" alt="한글 선박명의 네 가지 표기 방식"></p>
 
 소리대로 적은 이름은 철자나 발음을 비교하면 찾을 수 있습니다. 하지만 한자를 우리식으로 읽거나(金城 Jin Cheng → 금성), 일본 배의 丸(마루)를 '환'으로 쓰거나, 뜻을 번역한(Sea Princess → 바다 공주) 이름은 학습 데이터에 한 건도 없어서 모델이 스스로 배울 수가 없었습니다.
 
