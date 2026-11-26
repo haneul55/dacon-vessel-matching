@@ -63,7 +63,7 @@ DACON [항만 문제해결을 위한 AI 기술 공모전](https://dacon.io/compe
 1. **후보 검색 (78,595척 → 약 77척)**: 여러 검색 키로 정답일 만한 배를 넓게 모읍니다.
 2. **순위 학습 (약 77척 → 1척)**: 후보마다 '닮은 정도'를 계산해서 1등을 고릅니다.
 
-<p align="center"><img src="poster/fig_overview.png" width="760" alt="모델 개요"></p>
+<p align="center"><img src="assets/model_structure.png" width="900" alt="선박 매칭 모델 구조"></p>
 
 <br>
 
